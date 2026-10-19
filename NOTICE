@@ -1,0 +1,24 @@
+LEDVANCE Native for Homebridge
+Copyright (c) 2026 Kosztyk
+
+The LEDVANCE/Sylvania Tuya OEM app identity, cloud API signing and login flow,
+schema-based mappings, and mix_rgbcw packet layout were ported from the user's
+supplied hass-ledvance 0.2.0 integration (ledvance.zip).
+Upstream: https://github.com/buggedcom/hass-ledvance
+Copyright (c) 2024 buggedcom. MIT License; see LICENSE.
+
+The upstream textbook RSA helper is dedicated to the public domain. This
+package implements the same integer modular exponentiation with Node BigInt.
+
+TuyAPI 7.7.1 supplies local Tuya communication and encryption. It is installed
+as an npm dependency and retains its own MIT license.
+https://github.com/codetheweb/tuyapi
+
+Active GCM discovery uses the Tuya REQ_DEVINFO packet format also implemented
+by tinytuya: https://github.com/jasonacox/tinytuya
+
+Eve energy characteristic UUIDs follow the publicly used Eve HomeKit types.
+No Eve history service or Apple Home energy dashboard is implemented.
+
+LEDVANCE, SMART+, Sylvania, Tuya, HomeKit and Eve are trademarks of their
+respective owners. This is an independent community plugin.

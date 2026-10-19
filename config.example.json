@@ -1,0 +1,21 @@
+{
+  "name": "LEDVANCE Native",
+  "email": "your-ledvance-account@example.com",
+  "password": "YOUR_LEDVANCE_APP_PASSWORD",
+  "region": "EU",
+  "localControl": true,
+  "pollInterval": 30,
+  "localPollInterval": 5,
+  "discoveryInterval": 600,
+  "lanDiscoveryInterval": 300,
+  "localTimeout": 2,
+  "requestTimeout": 8,
+  "offlineGrace": 120,
+  "exposeMaster": true,
+  "exposeChildLock": false,
+  "exposeEffects": false,
+  "exposePower": true,
+  "devices": [],
+  "debug": false,
+  "platform": "LedvanceNative"
+}

@@ -1,0 +1,35 @@
+{
+  "source": "Independent Python hashlib/hmac/pow/struct vectors, matching the supplied integration algorithms",
+  "data": {
+    "a": "tuya.m.user.email.token.create",
+    "v": "1.0",
+    "lang": "en",
+    "deviceId": "test-device",
+    "clientId": "fx3fvkvusmw45d7jn8xh",
+    "time": "1700000000",
+    "requestId": "test-request",
+    "os": "Android",
+    "et": "0.0.1",
+    "postData": "{\"countryCode\":49,\"email\":\"test@example.com\"}"
+  },
+  "secret": "A_armptsqyfpxa4ftvtc739ardncett3uy_cgqx3ku34mh5qdesd7fcaru3gx7tyurr",
+  "hash": "6cc5c18973daa52e389395d29a91b76b",
+  "sign": "d92a32cfd0edad7ff1e6cf057d4ac930b101fbc3b84d263433bdeb19ec839342",
+  "rsa": {
+    "n": "179769313486231590772930519078902473361797697894230657273430081157732675805500963132708477322407536021120113879871393357658789768814416622492847430639474124377767893424865485276302219601246094119453082952085005768838150682342462881473913110540827237163350510684586298239947245938479716304835356329624224137107",
+    "e": "65537",
+    "password": "test-LEDVANCE-\u0103",
+    "encrypted": "0000000000000000000000000000000000000000000000000000000000000000198b61768730d2a2af341b409b1fcabf5e9292807c5102c258df199c6ddb74f3a0f5b56ac9ecabc67456e320b824c950c3f5380c310cb483298bf91e65781a2baf56e5a08ae66d83777798531c5b04100160debc7c040103ba7c493f004d76f06fa611c028e81e5465a88a60151df05bd3b4d68084bf49b6e112229410ccc59f"
+  },
+  "mixed": {
+    "encoded": "AAcAeAK8APoDIAGQ",
+    "state": {
+      "flags": 7,
+      "h": 120,
+      "s": 700,
+      "v": 250,
+      "b": 800,
+      "t": 400
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "pluginAlias": "LedvanceNative",
+  "pluginType": "platform",
+  "singular": true,
+  "headerDisplay": "Connect using the email and password from your LEDVANCE SMART+ WiFi app. No Tuya developer account is needed. Devices are discovered automatically; leave Device overrides empty unless you need to exclude, rename or configure a specific device.",
+  "schema": {
+    "type": "object",
+    "required": ["email", "password", "region"],
+    "properties": {
+      "name": {"title": "Name", "type": "string", "default": "LEDVANCE Native"},
+      "email": {"title": "App account email", "type": "string", "minLength": 1},
+      "password": {"title": "App account password", "type": "string", "format": "password", "minLength": 1},
+      "region": {"title": "Account region / app", "type": "string", "default": "EU", "enum": ["EU", "US", "US (Sylvania app)", "China", "India"]},
+      "countryCode": {"title": "Country calling code (optional)", "description": "Usually leave this unset. If required by your account, enter the calling code without +, for example 40 for Romania.", "type": "integer", "minimum": 1, "maximum": 999},
+      "localControl": {"title": "Enable local LAN control", "description": "Discover device addresses and keys automatically. Commands use the cloud if LAN control fails. Disable this if another integration holds the device's local connection.", "type": "boolean", "default": true},
+      "pollInterval": {"title": "Cloud polling interval (seconds)", "type": "integer", "minimum": 15, "maximum": 3600, "default": 30},
+      "localPollInterval": {"title": "Local polling interval (seconds)", "type": "integer", "minimum": 3, "maximum": 300, "default": 5},
+      "discoveryInterval": {"title": "Cloud device and key refresh (seconds)", "type": "integer", "minimum": 60, "maximum": 86400, "default": 600},
+      "lanDiscoveryInterval": {"title": "Active LAN discovery interval (seconds)", "type": "integer", "minimum": 30, "maximum": 3600, "default": 300},
+      "localTimeout": {"title": "LAN request timeout (seconds)", "type": "number", "minimum": 0.5, "maximum": 5, "default": 2},
+      "requestTimeout": {"title": "Cloud request timeout (seconds)", "type": "integer", "minimum": 3, "maximum": 30, "default": 8},
+      "offlineGrace": {"title": "Time before reporting No Response (seconds)", "description": "Retain the last confirmed state across brief connection failures.", "type": "integer", "minimum": 30, "maximum": 600, "default": 120},
+      "exposeMaster": {"title": "Show All Outlets / All Lights controls", "type": "boolean", "default": true},
+      "exposeChildLock": {"title": "Show child-lock switches (where supported)", "type": "boolean", "default": false},
+      "exposeEffects": {"title": "Show light effect switches (where supported)", "description": "Creates switches for work modes such as scene or music. Custom scene editing is not provided.", "type": "boolean", "default": false},
+      "exposePower": {"title": "Expose power monitoring to compatible HomeKit apps", "description": "Voltage, current, power and total energy are available in compatible apps such as Eve. Apple Home does not display these measurements.", "type": "boolean", "default": true},
+      "devices": {
+        "title": "Device overrides (optional)", "type": "array", "default": [],
+        "items": {
+          "type": "object", "required": ["id"],
+          "properties": {
+            "id": {"title": "Device ID", "description": "Copy the ID from the Homebridge discovery log.", "type": "string", "minLength": 1},
+            "name": {"title": "Name override", "type": "string"},
+            "exclude": {"title": "Exclude this device", "type": "boolean", "default": false},
+            "type": {"title": "HomeKit accessory type", "type": "string", "default": "auto", "enum": ["auto", "light", "outlet", "switch"]},
+            "ip": {"title": "Fixed IPv4 address (optional)", "type": "string"},
+            "version": {"title": "LAN protocol (only needed with fixed IP)", "type": "string", "enum": ["3.1", "3.2", "3.3", "3.4", "3.5"]},
+            "minKelvin": {"title": "Warmest colour temperature (kelvin)", "type": "integer", "minimum": 1000, "maximum": 10000, "default": 2000},
+            "maxKelvin": {"title": "Coolest colour temperature (kelvin)", "type": "integer", "minimum": 1001, "maximum": 12000, "default": 6536}
+          }
+        }
+      },
+      "debug": {"title": "Debug logging", "description": "Logs discovery, transport selection and sanitized errors. Passwords, local keys, session IDs and signed request URLs are not logged.", "type": "boolean", "default": false}
+    }
+  }
+}

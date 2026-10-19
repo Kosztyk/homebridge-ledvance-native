@@ -1,0 +1,27 @@
+{
+  "name": "homebridge-ledvance-native",
+  "displayName": "LEDVANCE Native",
+  "version": "1.0.0",
+  "description": "Homebridge plugin for LEDVANCE SMART+ WiFi and Sylvania devices, with app login, automatic discovery and local control with cloud fallback.",
+  "author": "Kosztyk",
+  "license": "MIT",
+  "main": "index.js",
+  "keywords": ["homebridge-plugin", "supports-hap", "ledvance", "sylvania", "smartplus", "tuya", "homekit"],
+  "engines": {
+    "node": "^20.19.0 || ^22.0.0 || ^24.0.0 || ^26.0.0",
+    "homebridge": "^1.8.0 || ^2.0.0"
+  },
+  "repository": {"type": "git", "url": "https://github.com/Kosztyk/homebridge-ledvance-native.git"},
+  "homepage": "https://github.com/Kosztyk/homebridge-ledvance-native#readme",
+  "bugs": {"url": "https://github.com/Kosztyk/homebridge-ledvance-native/issues"},
+  "files": ["index.js", "lib/", "scripts/check.js", "scripts/install-local.sh", "config.schema.json", "config.example.json", "README.md", "LICENSE", "NOTICE", "CHANGELOG.md"],
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "check": "node scripts/check.js",
+    "prepack": "npm run check",
+    "prepublishOnly": "npm test && npm run check"
+  },
+  "dependencies": {"tuyapi": "7.7.1"},
+  "devDependencies": {"homebridge": "2.4.0", "ajv": "^8.17.1"},
+  "publishConfig": {"access": "public"}
+}
