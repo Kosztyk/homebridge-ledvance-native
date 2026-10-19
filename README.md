@@ -1,8 +1,6 @@
 # Homebridge LEDVANCE Native
 
-Homebridge plugin for devices paired with the **LEDVANCE SMART+ WiFi** app, or the **Sylvania** app using its separate US login. Uses your existing app email and password. No Tuya developer account or Home Assistant instance is required.
-
-Author: **Kosztyk**. Initial version: **1.0.0**. Based on the supplied `hass-ledvance` 0.2.0 integration; see [NOTICE](NOTICE).
+Homebridge plugin for devices paired with the **LEDVANCE SMART+ WiFi** app, or the **Sylvania** app using its separate US login. Uses your existing app email and password.
 
 ## Devices and HomeKit controls
 
